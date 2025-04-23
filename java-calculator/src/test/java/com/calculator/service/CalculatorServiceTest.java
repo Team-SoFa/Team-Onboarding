@@ -50,20 +50,19 @@ class CalculatorServiceTest {
     }
 
     @Test
-    @DisplayName("곱셈 연산은 아직 구현되지 않았으므로 예외를 발생시켜야 함")
-    void testMultiplyThrowsException() {
+    @DisplayName("곱셈 연산 테스트")
+    void testMultiply() {
         // Given
         double num1 = 10;
         double num2 = 5;
 
         // When & Then
-        UnsupportedOperationException thrown = assertThrows(
-                UnsupportedOperationException.class,
-                () -> calculatorService.multiply(num1, num2),
-                "곱셈 기능은 아직 구현되지 않아 예외가 발생해야 합니다"
-        );
 
-        assertTrue(thrown.getMessage().contains("곱하기 기능은 아직 구현되지 않았습니다"));
+        // When
+        double result = calculatorService.multiply(num1, num2);
+
+        // Then
+        assertEquals(50, result, "10 * 5는 50여야 합니다");
     }
 
     @Test
