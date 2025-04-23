@@ -101,5 +101,20 @@ public class CalculatorController {
         return ResponseEntity.ok(response);
     }
 
+    @GetMapping("/multiply")
+    @Operation(summary = "곱셈 수행", description = "두 숫자를 곱합니다.")
+    public ResponseEntity<CalculationResponse> multiply(
+            @RequestParam("num1") double num1,
+            @RequestParam("num2") double num2) {
+
+        double result = calculatorService.multiply(num1, num2);
+
+        CalculationResponse response = new CalculationResponse(
+                result, "multiply", num1, num2, "곱셈 성공"
+        );
+
+        return ResponseEntity.ok(response);
+    }
+
     // TODO: 뺄셈, 곱셈, 나눗셈 API 엔드포인트 추가 예정
 }
