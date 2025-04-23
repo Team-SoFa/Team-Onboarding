@@ -11,11 +11,9 @@ export const add = (a: number, b: number): number => {
 
 /**
  * 첫 번째 수에서 두 번째 수를 빼는 함수
- * 나중에 Issue #1에서 구현할 예정
  */
 export const subtract = (a: number, b: number): number => {
-  // TODO: Issue #1 - 뺄셈 기능 구현
-  throw new Error("뺄셈 기능이 아직 구현되지 않았습니다");
+  return a - b;
 };
 
 /**
