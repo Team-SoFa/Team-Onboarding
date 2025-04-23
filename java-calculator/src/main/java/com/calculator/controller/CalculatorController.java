@@ -135,5 +135,23 @@ public class CalculatorController {
         return ResponseEntity.ok(response);
     }
 
+    @GetMapping("/divide")
+    @Operation(summary = "나눗셈 수행", description = "두 숫자를 나눕니다.")
+    public ResponseEntity<CalculationResponse> divide(
+            @RequestParam("num1") double num1,
+            @RequestParam("num2") double num2) {
+
+        double result = calculatorService.divide(num1, num2);
+
+        CalculationResponse response = new CalculationResponse(
+                result,
+                "divide",
+                num1,
+                num2,
+                "나눗셈 성공"
+        );
+
+        return ResponseEntity.ok(response);
+    }
     // TODO: 뺄셈, 곱셈, 나눗셈 API 엔드포인트 추가 예정
 }
