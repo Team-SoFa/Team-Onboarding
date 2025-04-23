@@ -28,11 +28,9 @@ export const multiply = (a: number, b: number): number => {
 
 /**
  * 첫 번째 수를 두 번째 수로 나누는 함수
- * 나중에 Issue #3에서 구현할 예정
  */
 export const divide = (a: number, b: number): number => {
-  // TODO: Issue #3 - 나눗셈 기능 구현
-  throw new Error("나눗셈 기능이 아직 구현되지 않았습니다");
+  return a / b;
 };
 
 /**
