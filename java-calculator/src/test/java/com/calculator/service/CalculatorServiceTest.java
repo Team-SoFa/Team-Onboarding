@@ -33,20 +33,17 @@ class CalculatorServiceTest {
     }
 
     @Test
-    @DisplayName("뺄셈 연산은 아직 구현되지 않았으므로 예외를 발생시켜야 함")
-    void testSubtractThrowsException() {
+    @DisplayName("뺄셈 연산 테스트")
+    void testSubtract() {
         // Given
         double num1 = 10;
         double num2 = 5;
 
-        // When & Then
-        UnsupportedOperationException thrown = assertThrows(
-                UnsupportedOperationException.class,
-                () -> calculatorService.subtract(num1, num2),
-                "뺄셈 기능은 아직 구현되지 않아 예외가 발생해야 합니다"
-        );
+        // When
+        double result = calculatorService.subtract(num1, num2);
 
-        assertTrue(thrown.getMessage().contains("빼기 기능은 아직 구현되지 않았습니다"));
+        // Then
+        assertEquals(5, result, "10 - 5는 5여야 합니다");
     }
 
     @Test
