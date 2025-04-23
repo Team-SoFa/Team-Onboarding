@@ -28,8 +28,6 @@ public class CalculatorService {
      */
     public double multiply(double a, double b) {
         return a * b;
-        // 미구현 상태로 예외 발생
-        //throw new UnsupportedOperationException("곱하기 기능은 아직 구현되지 않았습니다.");
     }
 
     /**
