@@ -37,8 +37,7 @@ public class CalculatorService {
         if (b == 0) {
             throw new CalculatorException("0으로 나눌 수 없습니다.");
         }
-        // 미구현 상태로 예외 발생
-        throw new UnsupportedOperationException("나누기 기능은 아직 구현되지 않았습니다.");
+        return a/b;
     }
 
     /**
