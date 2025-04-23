@@ -100,7 +100,7 @@ public class CalculatorController {
 
         return ResponseEntity.ok(response);
     }
-
+  
     @GetMapping("/multiply")
     @Operation(summary = "곱셈 수행", description = "두 숫자를 곱합니다.")
     public ResponseEntity<CalculationResponse> multiply(
@@ -111,6 +111,25 @@ public class CalculatorController {
 
         CalculationResponse response = new CalculationResponse(
                 result, "multiply", num1, num2, "곱셈 성공"
+   );
+
+        return ResponseEntity.ok(response);
+    }
+
+    @GetMapping("/subtract")
+    @Operation(summary = "뺼셈 수행", description = "두 숫자를 뻅니다.")
+    public ResponseEntity<CalculationResponse> subtract(
+            @RequestParam("num1") double num1,
+            @RequestParam("num2") double num2) {
+
+        double result = calculatorService.subtract(num1, num2);
+
+        CalculationResponse response = new CalculationResponse(
+                result,
+                "subtract",
+                num1,
+                num2,
+                "뺼셈 성공"
         );
 
         return ResponseEntity.ok(response);
