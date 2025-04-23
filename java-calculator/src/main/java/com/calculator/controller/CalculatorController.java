@@ -101,5 +101,24 @@ public class CalculatorController {
         return ResponseEntity.ok(response);
     }
 
+    @GetMapping("/subtract")
+    @Operation(summary = "뺼셈 수행", description = "두 숫자를 뻅니다.")
+    public ResponseEntity<CalculationResponse> subtract(
+            @RequestParam("num1") double num1,
+            @RequestParam("num2") double num2) {
+
+        double result = calculatorService.subtract(num1, num2);
+
+        CalculationResponse response = new CalculationResponse(
+                result,
+                "subtract",
+                num1,
+                num2,
+                "뺼셈 성공"
+        );
+
+        return ResponseEntity.ok(response);
+    }
+
     // TODO: 뺄셈, 곱셈, 나눗셈 API 엔드포인트 추가 예정
 }
