@@ -14,12 +14,10 @@ public class CalculatorService {
     }
 
     /**
-     * 뺄셈 기능 (미구현)
-     * TODO: 이슈로 할당 예정
+     * a 에서 b를 뺍니다.
      */
     public double subtract(double a, double b) {
-        // 미구현 상태로 예외 발생
-        throw new UnsupportedOperationException("빼기 기능은 아직 구현되지 않았습니다.");
+        return a - b;
     }
 
     /**
