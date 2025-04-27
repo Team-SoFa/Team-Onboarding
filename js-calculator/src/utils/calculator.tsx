@@ -25,7 +25,7 @@ export const subtract = (a: number, b: number): number => {
 export const multiply = (a: number, b: number): number => {
   return a * b;
   // TODO: Issue #2 - 곱셈 기능 구현
-  throw new Error("곱셈 기능이 아직 구현되지 않았습니다");
+  // throw new Error("곱셈 기능이 아직 구현되지 않았습니다");
 };
 
 /**
